@@ -8,7 +8,7 @@ Ciência da Computação | Tarde | Puc Minas Coração Eucaristico
 
 `Hospedagem`  
 
-[Kanban](https://tavaresslc.github.io/Kanban/)
+[Kanban] (https://llx7z2.csb.app/)
 
 
 ## Funcionalidades
