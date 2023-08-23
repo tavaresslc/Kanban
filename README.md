@@ -1,4 +1,4 @@
-# Kanban App
+# KanbanApp
 
 Este é um projeto de um aplicativo Kanban simples construído com React. O aplicativo permite que você organize suas tarefas em três colunas: "Pendente", "Fazendo" e "Completa".
 
@@ -8,7 +8,7 @@ Ciência da Computação | Tarde | Puc Minas Coração Eucaristico
 
 `Hospedagem`  
 
-[Kanban](https://llx7z2.csb.app/)
+[KanbanApp](https://llx7z2.csb.app/)
 
 
 ## Funcionalidades
