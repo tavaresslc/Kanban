@@ -1,7 +1,9 @@
+// Importando as bibliotecas necessárias
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import "./task-item.css";
 
+// Componente para exibir e editar uma tarefa individual
 export default function TaskItem({
   id,
   title,
@@ -9,15 +11,20 @@ export default function TaskItem({
   onTaskUpdate,
   onDeleteTask
 }) {
+  // Estado para controlar se a tarefa está em modo de edição
   const [isEditing, setIsEditing] = useState(false);
+
+  // Estado para armazenar o título editável da tarefa
   const [editableTitle, setEditableTitle] = useState(title);
 
+  // Função chamada quando o título da tarefa é alterado
   const onTitleChange = (event) => {
     const newTitle = event.target.value;
     setEditableTitle(newTitle);
     onTaskUpdate(id, newTitle, taskState);
   };
 
+  // Função chamada quando uma tecla é pressionada
   const onKeyPress = (event) => {
     if (event.key === "Enter") {
       setIsEditing(false);
@@ -27,11 +34,14 @@ export default function TaskItem({
     }
   };
 
+  // Função chamada quando o estado da tarefa é alterado
   const onTaskStateChange = (event) => {
     onTaskUpdate(id, title, event.target.value);
   };
 
+  // Renderização do componente
   if (isEditing) {
+    // Modo de edição: input para editar o título
     return (
       <div className="task-item">
         <input
@@ -43,6 +53,7 @@ export default function TaskItem({
       </div>
     );
   } else {
+    // Modo de visualização: exibe o título e permite selecionar o estado da tarefa
     return (
       <div className="task-item">
         <div onClick={(e) => setIsEditing(true)}>{editableTitle}</div>
@@ -56,6 +67,7 @@ export default function TaskItem({
   }
 }
 
+// Definição dos tipos esperados das propriedades do componente
 TaskItem.propTypes = {
   id: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
